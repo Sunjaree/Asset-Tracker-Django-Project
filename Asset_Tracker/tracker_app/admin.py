@@ -7,3 +7,4 @@ admin.site.register(Employee)
 admin.site.register(Assets)
 admin.site.register(AssetAssigned)
 
+
