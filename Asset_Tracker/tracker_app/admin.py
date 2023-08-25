@@ -1,9 +1,9 @@
 from django.contrib import admin
-from tracker_app.models import employee, assets, asset_assigned
+from tracker_app.models import Employee, Assets, AssetAssigned
 
 # Register your models here.
 
-admin.site.register(employee)
-admin.site.register(assets)
-admin.site.register(asset_assigned)
+admin.site.register(Employee)
+admin.site.register(Assets)
+admin.site.register(AssetAssigned)
 

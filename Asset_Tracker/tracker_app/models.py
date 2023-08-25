@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-
-class employee(models.Model):
+# Employee model for holding information about all the employees of a company 
+class Employee(models.Model):
 
     company_name = models.ForeignKey(User, on_delete=models.CASCADE)
     employee_name = models.CharField(max_length=50)
@@ -20,8 +20,8 @@ class employee(models.Model):
         return self.employee_name
     
 
-   
-class assets(models.Model):
+# Assets model to store information about all the assets of a company
+class Assets(models.Model):
 
     company_name = models.ForeignKey(User, on_delete=models.CASCADE)
     asset_id = models.AutoField(primary_key=True)
@@ -35,11 +35,11 @@ class assets(models.Model):
         return self.asset_name
     
 
-
-class asset_assigned(models.Model):
+# AssetAssigned model to store which asste is assigned to which employee
+class AssetAssigned(models.Model):
     
     company_name = models.ForeignKey(User, on_delete=models.CASCADE)
-    asset_assigned_to = models.ForeignKey(employee, on_delete=models.CASCADE)
+    asset_assigned_to = models.ForeignKey(Employee, on_delete=models.CASCADE)
     asset_checkout_date = models.DateField()
     asset_return_date = models.DateField()
     asset_log= models.CharField(max_length=200)
